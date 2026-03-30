@@ -1,8 +1,33 @@
 import streamlit as st
+from PIL import Image  # 画像を扱うために追加
+import os             # ファイルの存在確認のために追加
 import pandas as pd
 import numpy as np
-import altair as alt
+import alt as alt
 
+# --- ここから S-YLPH の設定 ---
+# 1. GitHubに上げた画像ファイル名
+ICON_FILE = "S-YLPH.jpg"
+
+# 2. 画像の読み込み処理
+if os.path.exists(ICON_FILE):
+    icon_image = Image.open(ICON_FILE)
+else:
+    # 画像が見つからない場合のバックアップ（これがないとエラーを防げます）
+    icon_image = "🏎️" 
+
+# 3. ページ設定（ブラウザのタブに反映）
+st.set_page_config(
+    page_title="S-YLPH | レース分析予測",
+    page_icon=icon_image,
+)
+# --- ここまで設定 ---
+
+# この下に、今あるアプリの続き（タイトル表示など）を書いていく
+st.title("S-YLPH")
+st.caption("Sector Yield & Level Prediction Hub")
+
+# (以下、既存の pandas や altair を使ったコード...)
 # --- 画面設定 ---
 st.set_page_config(page_title="タテトラ2026 決定版", layout="wide")
 st.markdown("""
