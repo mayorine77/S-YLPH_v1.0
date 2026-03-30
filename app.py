@@ -41,13 +41,13 @@ st.markdown(f"""
     <link rel="apple-touch-icon" href="{BASE64_DATA}">
     <link rel="icon" type="image/png" href="{BASE64_DATA}">
     
-    <meta name="apple-mobile-web-app-title" content="S-ylph">
+    <meta name="apple-mobile-web-app-title" content="S-YLPH">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     """, unsafe_allow_html=True)
 
 # タイトル表示
-st.title("S-ylph")
+st.title("S-YLPH")
 st.caption("Sector Yield & Level Prediction Hub - タテトラ2026 シミュレーター")
 
 # --- 3. データ生成ロジック ---
